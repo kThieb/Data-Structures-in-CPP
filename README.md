@@ -10,7 +10,7 @@ The currently implemented data structures are:
  <li> Max Heap </li>
  <li> Union-find </li>
  <li> Binary Search Tree </li>
- <li> Fenwick Tree </li>
+ <li> Fenwick Tree in 1D and in 2D </li>
  <li> Trie </li>
 </ul>
 
