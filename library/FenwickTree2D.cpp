@@ -1,31 +1,37 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Ft {
-    vector<int> bit;
-    int n;
+class FenwickTree2D {
+    vector<vector<int>> bit;
+    int m, n;
 public:
-    Ft(vector<int> arr) {
-        n = arr.size();
-        bit.assign(n + 1, 0);
-        for(int i = 0; i < n; ++i) {
-            update(i, arr[i]);
+    FenwickTree2D(vector<vector<int>> arr) {
+        int m = arr.size(), n = arr[0].size();
+        bit.assign(m + 1, vector<int> (n + 1));
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                update(i, j, arr[i][j]);
+            }
         }
     }
 
-    void update(int i, int val) {
-        ++i;
-        for (; i <= n; i += (i & (-i))) {
-            bit[i] += val;
+    void update(int i, int j, int val) {
+        ++i, ++j;
+        for (; i <= m; i += (i & (-i))) {
+            for (; j <= n; j += (j & (-j))) {
+                bit[i][j] += val;
+            }
         }
     }
 
-    int get_sum(int i) {
-        ++i;
+    int get_sum(int i, int j) {
+        ++i, ++j;
         int sum = 0;
         for (; i > 0; i -= (i & (-i))) {
-            sum += bit[i];
+            for (; j > 0; j -= (j & (-j))) {
+                sum += bit[i][j];
+            }
         }
         return sum;
     }
-}
+};

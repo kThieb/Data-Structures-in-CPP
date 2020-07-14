@@ -21,9 +21,8 @@ public:
     int get_sum_from_0(int index) {
         ++index;
         int sum = 0;
-        while (index > 0) {
+        for (; index > 0; index -= (index & (-index))) {
             sum += BITree[index];
-            index -= (index & (-index));
         }
         return sum;
     }
@@ -34,9 +33,8 @@ public:
 
     void update(int index, int val) {
         ++index;
-        while (index <= n) {
+        for (; index <= n; index += (index & (-index))) {
             BITree[index] += val;
-            index += (index & (-index));
         }
     }
 };
