@@ -12,6 +12,7 @@ The currently implemented data structures are:
  <li> Binary Search Tree </li>
  <li> Fenwick Tree in 1D and in 2D </li>
  <li> Trie </li>
+ <li> HashMap </li>
 </ul>
 
 The following data structures are ones I would like to implement:
