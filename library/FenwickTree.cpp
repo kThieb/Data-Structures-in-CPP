@@ -7,11 +7,8 @@ class FenwickTree {
 
 public:
     FenwickTree(vector<int> arr, int _n) {
-        BITree = vector<int>(n + 1);
         n = _n;
-        for (int i = 1; i <= n; ++i) {
-            BITree[i] = 0;
-        }
+        BITree.assign(n + 1, 0);
 
         for (int i = 0; i < n; ++i) {
             update(i, arr[i]);
