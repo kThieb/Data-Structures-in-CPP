@@ -1,6 +1,8 @@
 # Data-Structures-in-CPP
  
-This is a library of different data structures implemented in C++
+This is a library of different data structures implemented in C++ to learn about them.
+
+This project really helped me have a better fundamental understanding of Computer Science.
 
 The currently implemented data structures are:
 <ul>
